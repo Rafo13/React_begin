@@ -1,15 +1,16 @@
 .task {
-   margin: 10px auto;
    color: rgb(46, 48, 43)!important;
+   width: 180px;
+   height: 400px;
+   margin: 20px 0 0 0;
 }
 
 .warnButton {
    margin: 0 10px 0 0;
-
 }
 
 .dangerButton {
-   margin: 0 0 0 10px;
+   margin: 0 10px 0 0;
 }
 .dataStyle{
    font-size: 12px;
@@ -17,4 +18,10 @@
 
 .status {
    color : rgb(66, 4, 4);
+}
+
+.buttons{
+   display: flex;
+   justify-content: center;
+   padding: 20px 0;
 }
