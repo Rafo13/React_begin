@@ -44,15 +44,18 @@ class Task extends PureComponent {
                   <Card.Text>Description: {trimString(task.description, 50)}</Card.Text>
                   <Card.Text className={styles.status}>Status: {task.status}</Card.Text>
                   <Card.Text className={styles.dataStyle}>Date: {formatDate(task.date)}</Card.Text>
-                  <Card.Text className={styles.dataStyle}>Created: {formatDate(task.created_at)}</Card.Text>
+                  <Card.Text className={styles.dataStyle}>Created: {formatDate(task.created_at)}</Card.Text>     
 
+               </Card.Body>
+
+               <div className={styles.buttons}>
                   {
                      task.status === 'active' ?
                         <Button
                            variant="success"
                            className={styles.warnButton}
                            disabled={disabled}
-                           onClick={() => this.props.changeTaskStatus(task._id, {status: 'done'}, 'tasks')}
+                           onClick={() => this.props.changeTaskStatus(task._id, { status: 'done' }, 'tasks')}
                         >
                            <FontAwesomeIcon icon={faCheck} />
                         </Button> :
@@ -62,7 +65,7 @@ class Task extends PureComponent {
                            variant="warning"
                            className={styles.warnButton}
                            disabled={disabled}
-                           onClick={() => this.props.changeTaskStatus(task._id, {status: 'active'}, 'tasks')}
+                           onClick={() => this.props.changeTaskStatus(task._id, { status: 'active' }, 'tasks')}
                         >
                            <FontAwesomeIcon icon={faHistory} />
                         </Button>
@@ -84,7 +87,8 @@ class Task extends PureComponent {
                   >
                      <FontAwesomeIcon icon={faTrash} />
                   </Button>
-               </Card.Body>
+               </div>
+
             </Card>
          </>
       )
