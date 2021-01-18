@@ -1,7 +1,13 @@
 .input{
    width: 100%!important;
+   background-color:silver!important;
 }
 .description{
    width: 100%!important;
    margin-top: 20px;
+   background-color:silver!important;
+}
+
+.editModal, .date{
+   background-color:silver!important;
 }

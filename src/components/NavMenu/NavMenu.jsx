@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import styles from './navStyle.module.css'
+import styles from './navStyle.module.css';
 
 export default class NavMenu extends Component {
    render() {
       return (
          <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" className={styles.wrap}>
                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="mr-auto">
@@ -30,7 +30,7 @@ export default class NavMenu extends Component {
                      </NavLink>
 
                      <NavLink
-                        to='/456'
+                        to='/contact'
                         activeStyle={{ color: 'green' }}
                         exact
                         className={styles.navLink}

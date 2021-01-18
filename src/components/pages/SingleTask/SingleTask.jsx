@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import EditTaskButton from '../../EditTaskButton/EditTaskButton';
 import { connect } from 'react-redux';
-import { getSingleTask, removeTask } from '../../../store/actions'
+import { getSingleTask, removeTask } from '../../../store/actions';
+import styles from './SingleTask.module.css';
+
 
 
 class SingleTask extends PureComponent {
@@ -67,12 +69,13 @@ class SingleTask extends PureComponent {
       return (
          <>
             {!!task ?
-               <div>
+               <div className={styles.wrap}>
                   <h2>{task.title}</h2>
                   <p>Description: {task.description}</p>
                   <p>Date: {task.date.slice(0, 10)}</p>
                   <p>Created at: {task.created_at.slice(0, 10)}</p>
                   <Button variant="danger"
+                     className={styles.danger}
                      onClick={()=>this.props.removeTask(task._id, 'single', historyPush)}
                   >
                      <FontAwesomeIcon icon={faTrash} />

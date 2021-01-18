@@ -9,3 +9,8 @@
 .navLink{
    margin: 0 50px;
 }
+
+.wrap{
+   background-color:rgb(238, 248, 238)!important;
+   font-size: 18px;
+}

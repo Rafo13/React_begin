@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from './Contact.module.css';
 
 const defaultValues = {
    name: '',
@@ -28,13 +29,14 @@ export default function Contact() {
    }
 
    return (
-      <div>
+      <div className={styles.wrap}>
          <input
          type='text'
          name='name'
          placeholder='Your name'
          value={values.name}
          onChange={handleChange}
+         className={styles.input}
          />
          
          <input
@@ -43,6 +45,7 @@ export default function Contact() {
          placeholder='Your email'
          value={values.email}
          onChange={handleChange}
+         className={styles.input}
          /> 
 
          <input
@@ -50,6 +53,7 @@ export default function Contact() {
          type='phone'
          placeholder='Your phone'
          onChange={handleChange}
+         className={styles.input}
          value={values.value}
          />
 
@@ -58,6 +62,7 @@ export default function Contact() {
          placeholder='Your message'
          value={values.message}
          onChange={handleChange}
+         className={styles.textarea}
          >
          </textarea>
 

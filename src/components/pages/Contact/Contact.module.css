@@ -1,0 +1,15 @@
+.wrap{
+   background-color: white;
+   display: flex;
+   height: 200px;
+   flex-direction: column;
+   width: 100vw;
+}
+
+.input{
+   border: 1px solid rgb(236, 228, 228);
+}
+.textarea{
+   border: 1px solid rgb(236, 228, 228);
+   height: 100%;
+}
