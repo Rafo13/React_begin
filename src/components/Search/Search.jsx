@@ -4,6 +4,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { connect } from 'react-redux';
 import { getTasks } from '../../store/actions';
+import styles from './Search.module.css';
+
 
 const statusOptions = [
    {
@@ -119,12 +121,11 @@ function Search(props) {
    }
    return (
       <>
-         <Navbar bg="light" expand="lg">
-            <Navbar.Brand>Search/Sort/Filter</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+         <Navbar bg="light" expand="lg" className={styles.wrap}>
+            <Navbar.Brand className={styles.wrap1}>Search/Sort/Filter</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" className={styles.wrap21}/>
+            <Navbar.Collapse id="basic-navbar-nav"  className={styles.wrap2}>
                <Nav className="mr-auto">
-                  {/* <NavDropdown title={status ? status : 'Status'}> */}
                   <NavDropdown title={status.value ? status.label : 'Status'}>
                      {
                         //veradardzvox zangvacy mnum e ir texum
@@ -163,9 +164,10 @@ function Search(props) {
                   <FormControl
                      type="text"
                      placeholder="Search"
-                     className="mr-sm-2"
                      onChange={(e) => setSearch(e.target.value)}
                      value={search}
+                     className={styles.wrap3}
+
                   />
                   <Button
                      variant="outline-success"
@@ -182,10 +184,12 @@ function Search(props) {
             dateOptions.map((item, index) => {
                return (
                   <div key={index}>
-                     <span>{item.label} </span>
+                     <span className={styles.label}>{item.label} </span>
 
+                  <div className={styles.input}>
                      <DatePicker
                         selected={dates[item.value]}
+                        className={styles.item}
                         onChange={(date) => {
                            setDates({
                               ...dates,
@@ -193,6 +197,7 @@ function Search(props) {
                            })
                         }}
                      />
+                     </div>
                   </div>
                )
             })

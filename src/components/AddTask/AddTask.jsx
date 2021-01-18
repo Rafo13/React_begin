@@ -1,11 +1,11 @@
-import React, { Component, createRef } from 'react'
+import React, { Component, createRef } from 'react';
 import {FormControl, Button, Modal } from 'react-bootstrap';
 import styles from './addtask.module.css';
 import PropTypes from 'prop-types';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {connect} from 'react-redux';
-import {addTask} from '../../store/actions'
+import {addTask} from '../../store/actions';
 
 class AddTask extends Component {
    constructor(props) {
@@ -62,14 +62,15 @@ class AddTask extends Component {
       return (
          <>
             <Modal
+            // className={styles.addModal}
                show={true}
                onHide={onClose}
                centered
             >
-               <Modal.Header closeButton>
+               <Modal.Header closeButton className={styles.addModal}>
                   <Modal.Title>Add Task</Modal.Title>
                </Modal.Header>
-               <Modal.Body>
+               <Modal.Body className={styles.addModal}>
                   <FormControl
                      name="title"
                      onChange={this.handleChange}
@@ -95,7 +96,7 @@ class AddTask extends Component {
                />
 
                </Modal.Body>
-               <Modal.Footer>
+               <Modal.Footer className={styles.addModal}>
                   <Button variant="primary" onClick={this.handleClick}>
                      Add
                   </Button>

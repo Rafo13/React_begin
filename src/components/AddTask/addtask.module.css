@@ -1,10 +1,17 @@
 .input {
    border: 2px solid rgb(184, 161, 161)!important;
    color: rgb(76, 100, 30)!important;
+   background-color:silver!important;
+
 }
 
 .description{
    width: 100%;
    margin: 15px 0;
    border: 2px solid rgb(184, 161, 161)!important;
+   background-color:silver!important;
+}
+
+.addModal, .date{
+   background-color:silver;
 }

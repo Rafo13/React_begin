@@ -1,12 +1,12 @@
 import React from 'react';
-import {createRef} from 'react'
+import {createRef} from 'react';
 import { Modal, Button, FormControl } from 'react-bootstrap';
-import PropTypes from 'prop-types'
-import styles from './EditTaskButton.module.css'
+import PropTypes from 'prop-types';
+import styles from './EditTaskButton.module.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {connect} from 'react-redux';
-import {editTask} from '../../store/actions'
+import {editTask} from '../../store/actions';
 
 
 class EditTaskButton extends React.Component {
@@ -59,10 +59,10 @@ class EditTaskButton extends React.Component {
                onHide={onClose}
                centered
             >
-               <Modal.Header closeButton>
+               <Modal.Header closeButton className={styles.editModal}>
                   <Modal.Title>Edit Task</Modal.Title>
                </Modal.Header>
-               <Modal.Body>
+               <Modal.Body  className={styles.editModal}>
                   <FormControl
                      value={title}
                      name="title"
@@ -90,7 +90,7 @@ class EditTaskButton extends React.Component {
                   />
 
                </Modal.Body>
-               <Modal.Footer>
+               <Modal.Footer  className={styles.editModal}>
                   <Button variant="primary" onClick={this.handleSave}>
                      Save
                   </Button>
